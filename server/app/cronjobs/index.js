@@ -44,13 +44,13 @@ internals.getJobs = function(){
                     break;
                 case 2:
                     prev.onTick = function(){
-                        internals.runCronjob(prev.app, "every-five-minutes")
+                        internals.runCronjob(prev.app, curr)
                     }
                     break;
             }
 
             return prev;
-        }, {});
+        }, { start: true });
     });
 }
 
