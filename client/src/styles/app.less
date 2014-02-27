@@ -1,0 +1,17 @@
+@import "variables";
+@import "bootstrap";
+
+body{
+    padding-top: 100px;
+}
+
+@keyframes rotate{
+    from { transform: rotate(0.1deg); }
+    to { transform: rotate(360deg); }
+}
+
+.animated{
+    .animation-rotate{
+        animation: rotate 0.5s infinite linear;
+    }   
+}

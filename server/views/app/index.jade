@@ -1,0 +1,26 @@
+extends /layouts/default
+
+block content
+    .container
+        .row
+            .col-xs-12
+                .panel.panel-default
+                    .panel-heading Die letzten 10 ausgeführten Cronjobs
+                    .panel-body
+                        include /cronjobs/partials/table
+        .row
+            each app in apps
+                .col-sm-6
+                    .panel.panel-default
+                        .panel-heading 
+                            | #{app.name} 
+                            if app.status === "online"
+                                span.label.label-success #{app.status}
+                            else
+                                span.label.label-danger #{app.status}
+                        .panel-body
+                            .row
+                                .col-xs-12
+                                    a.btn.btn-info.btn-block.btn-lg(href="/app/restart/#{app.name}")
+                                        span.fa.fa-refresh.animation-rotate
+                                        |  Neustarten

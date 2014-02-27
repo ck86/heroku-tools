@@ -1,0 +1,26 @@
+{
+  "name": "heroku-tools",
+  "main": "index.js",
+  "version": "0.0.0",
+  "authors": [
+    "Christopher Knötschke <cknoetschke@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.1.1",
+    "angular": "~1.2.13"
+  },
+  "overrides": {
+    "jquery": {
+      "main": "./dist/jquery.js"
+    }
+  }
+}

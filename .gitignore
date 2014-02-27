@@ -1,0 +1,4 @@
+client/bower_components/
+client/public/
+node_modules/
+nodemon.json

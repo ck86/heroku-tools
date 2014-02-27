@@ -1,0 +1,22 @@
+table.table
+    thead
+        tr
+            th #
+            th Command
+            th.text-center Erfolgreich?
+            th Fehler-Ausgaben
+            th Gelaufen am
+    tbody
+        each cronjob, i in cronjobs
+            tr
+                td #{i + 1}
+                td #{cronjob.cronjob}
+                td.text-center
+                    if cronjob.was_successful
+                        span.glyphicon.glyphicon-ok.text-success
+                    else
+                        span.glyphicon.glyphicon-remove.text-danger
+                td 
+                    if cronjob.error_output !== null
+                        | !{cronjob.error_output.split("\n").join("<br>")}
+                td #{cronjob.created}
